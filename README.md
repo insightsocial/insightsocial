@@ -1,12 +1,12 @@
 # InsightSocial — Multi-platform social media scraper
 
-> One-click data export from Facebook, Instagram, TikTok, X (Twitter), LinkedIn, and Threads.
-> Runs as a Chrome extension. No code required.
+> One-click data export from Instagram, TikTok, Facebook, LinkedIn, X (Twitter), Threads,
+> YouTube, Reddit and Pinterest. Runs as a Chrome extension. No code required.
 
-[**Install from Chrome Web Store →**](https://chromewebstore.google.com/detail/insight-social-ai-scraper/cddgiejchlkeedmhjeodlcjdiddlcdld)
-&nbsp;·&nbsp; [Website](https://www.insightsocial.xyz)
-&nbsp;·&nbsp; [Use cases](https://www.insightsocial.xyz/use-cases)
-&nbsp;·&nbsp; [What's new](https://www.insightsocial.xyz/whats-new)
+[**Install from Chrome Web Store →**](https://chromewebstore.google.com/detail/insight-social-ai-web-dat/cddgiejchlkeedmhjeodlcjdiddlcdld)
+&nbsp;·&nbsp; [Website](https://www.insightsocial.app)
+&nbsp;·&nbsp; [Use cases](https://www.insightsocial.app/use-cases)
+&nbsp;·&nbsp; [What's new](https://www.insightsocial.app/whats-new)
 
 ![Instagram hashtag results in the InsightSocial web portal — 500 creators with contact info, follower counts, engagement rate, and bio fields](screenshots/instagram-result-page.png)
 
@@ -16,25 +16,28 @@
 
 ## What it does
 
-InsightSocial scrapes the social platforms you're already logged into — directly from your browser — and exports the results to CSV or JSON. Nothing leaves your machine until you choose to sync, and there's nothing to configure beyond installing the extension.
+InsightSocial scrapes the social platforms you're already logged into — directly from your browser — and exports the results to CSV or JSON. There is no third-party server between you and the platform, your password and cookies are never shared with us, and there's nothing to configure beyond installing the extension. Rows sync to your own account as a run progresses so results are waiting in the web portal.
 
 ### Supported platforms & sources
 
 | Platform | Sources |
 |---|---|
-| **Facebook** | Groups · Pages · Profiles · Home Feed · Single Post |
-| **Instagram** | Hashtag · Profile · Followers · Home · Explore · Post |
-| **TikTok** | Hashtag · Profile · Single Video · Search · For You |
-| **X (Twitter)** | Home · Profile · Search |
-| **LinkedIn** | Feed · Company · Profile |
-| **Threads** | Feed · Profile · Single Post (comments) |
+| **Instagram** | Hashtag · Profile · Single Post · Home Feed · Explore · Followers list · Following list |
+| **TikTok** | Single Video · Profile · Hashtag · Search · For You |
+| **Facebook** | Group · Page · Profile · Home Feed · Search Results · Single Post · Followers · Following |
+| **LinkedIn** | Home Feed · Company · Profile · Single Post · People search |
+| **X (Twitter)** | Home Feed · Profile · Search · Hashtag · Explore · Single Post · Followers list · Following list · List · Community |
+| **Threads** | Home Feed · Profile · Single Post · Search |
+| **YouTube** | Video · Shorts |
+| **Reddit** | Single Post · Search Results |
+| **Pinterest** | Search Results |
 
 ## How it works
 
 1. **Install** the extension from the Chrome Web Store.
 2. **Open** a supported page (e.g. an Instagram hashtag, a Facebook group, a TikTok profile).
 3. **Click the InsightSocial side panel** and pick what to scrape. The extension scrolls + collects in the background.
-4. **Export** to CSV or JSON, or view results in the [web portal](https://www.insightsocial.xyz/portal/history).
+4. **Export** to CSV or JSON, or view results in the [web portal](https://www.insightsocial.app/portal/history).
 
 ### See it in action
 
@@ -57,9 +60,9 @@ InsightSocial scrapes the social platforms you're already logged into — direct
 
 ## Use cases
 
-- **[Lead generation](https://www.insightsocial.xyz/use-cases/lead-generation)** — extract members from Facebook groups, followers from Instagram profiles, engaged audiences from LinkedIn company pages.
-- **[Competitor analysis](https://www.insightsocial.xyz/use-cases/competitor-analysis)** — track what competitor accounts post, who engages, what hashtags they ride.
-- **[Content research](https://www.insightsocial.xyz/use-cases/content-research)** — pull top-performing TikToks for a hashtag, viral X threads, Instagram hashtag feeds.
+- **[Audience research](https://www.insightsocial.app/use-cases/audience-research)** — pull followers from Instagram profiles, engaged audiences from LinkedIn company pages, creators behind a hashtag.
+- **[Competitor analysis](https://www.insightsocial.app/use-cases/competitor-analysis)** — track what competitor accounts post, who engages, what hashtags they ride.
+- **[Content research](https://www.insightsocial.app/use-cases/content-research)** — pull top-performing TikToks for a hashtag, viral X threads, Instagram hashtag feeds.
 
 ## FAQ
 
@@ -73,30 +76,30 @@ After a scrape session completes, click **Export** in the side panel. CSV and JS
 No — schedules run via Chrome alarms, which require the browser to be open. We're upfront about this; nobody else's "scheduled scraper" works closed either, they just don't tell you.
 
 **Where is my data stored?**
-Locally in your browser (IndexedDB) until you choose to sync. Synced data lives in our database under your account only.
+Rows are buffered in your browser (IndexedDB) and synced to your own account as a run progresses, so you can pick them up in the web portal or export straight from the side panel. Synced data is readable only by your account.
 
 **Is there an API?**
 Not yet a public/programmatic API — talk to us if you need that.
 
 ## Roadmap
 
-- More platforms (Reddit, YouTube comments) — planned
+- More platforms — ongoing (YouTube, Reddit and Pinterest have shipped)
 - Public API + Zapier integration — exploring
 - Bulk export from saved sessions — in progress
 
-[See the public changelog →](https://www.insightsocial.xyz/whats-new)
+[See the public changelog →](https://www.insightsocial.app/whats-new)
 
 ## Support
 
 - Email: **insightsocial.xyz@gmail.com**
-- Web portal: **https://www.insightsocial.xyz/portal/history**
+- Web portal: **https://www.insightsocial.app/portal/history**
 
 ## About
 
 InsightSocial is built by independent makers shipping in public. Follow along:
 - Twitter/X: [@dovy_dev](https://x.com/dovy_dev)
-- Blog: [insightsocial.xyz/blog](https://www.insightsocial.xyz/blog)
+- Blog: [insightsocial.app/blog](https://www.insightsocial.app/blog)
 
 ---
 
-*InsightSocial is not affiliated with Meta, ByteDance, X Corp, or Microsoft. All platform names are trademarks of their respective owners.*
+*InsightSocial is not affiliated with Meta, ByteDance, X Corp, Microsoft, Google, Reddit or Pinterest. All platform names are trademarks of their respective owners.*
