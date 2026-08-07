@@ -91,7 +91,7 @@ Not yet a public/programmatic API — talk to us if you need that.
 
 ## Support
 
-- Email: **insightsocial.xyz@gmail.com**
+- Email: **support@insightsocial.app**
 - Web portal: **https://www.insightsocial.app/portal/history**
 
 ## About
