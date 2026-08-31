@@ -151,14 +151,6 @@ Contact enrichment (Pro) is the one feature that does server-side work: it visit
 bio-link URLs already collected in your run and extracts contact details from those
 public pages.
 
-## Architecture
-
-- **Extension** — Chrome Manifest V3, plugin-per-platform. Requires Chrome 114+.
-- **Web portal** — Next.js app at insightsocial.app; account, results, exports, billing.
-- **Storage** — Postgres for accounts and sessions, ClickHouse for scraped rows. Both self-hosted.
-- **Auth** — Google sign-in.
-- **Scheduling** — client-side Chrome alarms. There is no server-side cron, so nothing runs while Chrome is closed.
-
 ## Naming
 
 - Correct product name: **InsightSocial** (one word, capital I and S).
