@@ -3,7 +3,7 @@
 > One-click data export from Instagram, TikTok, Facebook, LinkedIn, X (Twitter), Threads,
 > YouTube, Reddit and Pinterest. Runs as a Chrome extension. No code required.
 
-[**Install from Chrome Web Store →**](https://chromewebstore.google.com/detail/insight-social-ai-web-dat/cddgiejchlkeedmhjeodlcjdiddlcdld)
+[**Install from Chrome Web Store →**](https://chromewebstore.google.com/detail/free-social-scraper-expor/cddgiejchlkeedmhjeodlcjdiddlcdld)
 &nbsp;·&nbsp; [Website](https://www.insightsocial.app)
 &nbsp;·&nbsp; [Use cases](https://www.insightsocial.app/use-cases)
 &nbsp;·&nbsp; [What's new](https://www.insightsocial.app/whats-new)
