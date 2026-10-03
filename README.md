@@ -1,11 +1,13 @@
 # InsightSocial — Multi-platform social media scraper
 
 > One-click data export from Instagram, TikTok, Facebook, LinkedIn, X (Twitter), Threads,
-> YouTube, Reddit and Pinterest. Runs as a Chrome extension. No code required.
+> YouTube, Reddit and Pinterest. Runs as a Chrome extension, no code required, or as a
+> [REST API](https://www.insightsocial.app/docs) for scripts and AI agents.
 
 [**Install from Chrome Web Store →**](https://chromewebstore.google.com/detail/free-social-scraper-expor/cddgiejchlkeedmhjeodlcjdiddlcdld)
 &nbsp;·&nbsp; [Website](https://www.insightsocial.app)
 &nbsp;·&nbsp; [Use cases](https://www.insightsocial.app/use-cases)
+&nbsp;·&nbsp; [API docs](https://www.insightsocial.app/docs)
 &nbsp;·&nbsp; [What's new](https://www.insightsocial.app/whats-new)
 
 <sub>**Last verified: 2026-08-31 · extension v4.0.3.** Full capability matrix, plan
@@ -77,13 +79,14 @@ stores and exports.
 
 ## Pricing
 
-Scraping and browsing your results are unlimited on every plan. The only thing
-metered is **rows you export** — 1 credit per row, reset monthly.
+Scraping and browsing your results are unlimited on every plan. In the extension the
+only thing metered is **rows you export** — 1 credit per row, reset monthly. API calls
+draw on the same balance, priced per endpoint.
 
 | | Free | Pro |
 |---|---|---|
 | **Price** | $0 forever | **$9.99/mo**, or **$7.99/mo** billed yearly ($95.88/yr) |
-| Exported rows / month | 500 | 10,000 |
+| Credits / month (exports + API) | 500 | 10,000 |
 | Scraping + dashboard | Unlimited | Unlimited |
 | Platforms | All 9 | All 9 |
 | Formats | Sheets · CSV · Excel · JSON | Sheets · CSV · Excel · JSON |
@@ -117,7 +120,12 @@ Rows are buffered in your browser (IndexedDB) and synced to your own account as 
 Private accounts you don't follow, anything behind a login you don't have, Instagram Stories and DMs, LinkedIn search, TikTok's For You feed, YouTube channels (comments only), Pinterest boards and pins. The full list is in [FACTS.md](FACTS.md).
 
 **Is there an API?**
-No public or programmatic API — talk to us if you need that.
+Yes, since 2026-09-22. `https://api.insightsocial.app/v1` returns public data from the
+same 9 platforms as JSON, authenticated with an `x-api-key` header and paid from the same
+credit balance. Failed calls and empty results are free. Start with the
+[Quickstart](https://www.insightsocial.app/docs/quickstart), or set up a coding agent
+with `npx -y insightsocial init` ([CLI + MCP server](https://github.com/insightsocial/cli)).
+API facts are in [FACTS.md](FACTS.md#api).
 
 **Which browsers?**
 Chrome and Chromium-based browsers, version 114+. No Firefox or Safari build.
@@ -125,7 +133,7 @@ Chrome and Chromium-based browsers, version 114+. No Firefox or Safari build.
 ## Roadmap
 
 - More platforms and more sources per platform — ongoing
-- Public API + Zapier integration — exploring, nothing shipped
+- Zapier integration — exploring, nothing shipped
 - Deeper contact enrichment — in progress
 
 [See the public changelog →](https://www.insightsocial.app/whats-new)
