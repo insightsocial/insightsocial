@@ -124,8 +124,8 @@ Facts below come from the live catalogue, `GET https://api.insightsocial.app/v1/
   return `400 UNSUPPORTED_PARAMETER`, free. Fields a response could not fill are listed
   in `unavailable`.
 - Pages continue with one `v2c.…` cursor sent back as `cursor`, valid 24 hours.
-- The previous body is still served with the header `InsightSocial-Version: legacy`
-  until **2026-11-03**; after that every call gets schema 2.
+- Schema 2 is the only shape served. The previous body and its
+  `InsightSocial-Version: legacy` header were retired on 2026-10-04.
 - Details: [insightsocial.app/docs/schema-2](https://www.insightsocial.app/docs/schema-2).
 
 The platform/source tables below describe the **extension**. The API has its own
