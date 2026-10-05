@@ -93,16 +93,16 @@ Facts below come from the live catalogue, `GET https://api.insightsocial.app/v1/
   Facebook, LinkedIn, X/Twitter, Threads, YouTube, Reddit, Pinterest). Every successful
   response uses the same JSON envelope; errors share one smaller body
   (`success: false`, `error.type`, `error.message`, `request_id`).
-- **Price:** per endpoint, in credits, never flat. Most fixed endpoints cost 20, 100 or
-  200 credits; a profile lookup is 20. About a quarter of endpoints are **metered**
+- **Price:** per endpoint, in credits, never flat. Most fixed endpoints cost 10, 50 or
+  100 credits; a profile lookup is 10 (halved on 2026-10-05). About a quarter of endpoints are **metered**
   (61 on 2026-10-04; `summary.metered` in the catalogue has the current count): the top
   of their price range is held when the call starts and only what the call used is charged.
 - **Free:** failed calls, empty results, `dry_run=1` calls, and `Idempotency-Key`
   replays. `GET /v1/credits` and `GET /v1/endpoints` are free. Every account also
-  gets 10 free calls, once, for calls priced at 200 credits or less.
+  gets 10 free calls, once, for calls priced at 100 credits or less.
 - **Charged:** every call that returns data, including a repeat of a call you already
   made, because it can return newer data. An answer served from the shared cache costs
-  5 credits; otherwise a repeat costs the full price again. Only an `Idempotency-Key`
+  2 credits; otherwise a repeat costs the full price again. Only an `Idempotency-Key`
   replay is free. API credits are non-refundable.
 - **Balance:** the same balance as exports. Credits spent on the API reduce what you
   can export, and the other way round. Every response reports `credits_used` and
