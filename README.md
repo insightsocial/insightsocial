@@ -1,16 +1,20 @@
-# InsightSocial — Multi-platform social media scraper
+# InsightSocial — social media data API, MCP server and Chrome extension
 
-> One-click data export from Instagram, TikTok, Facebook, LinkedIn, X (Twitter), Threads,
-> YouTube, Reddit and Pinterest. Runs as a Chrome extension, no code required, or as a
-> [REST API](https://www.insightsocial.app/docs) for scripts and AI agents.
+> Public social media data two ways, on one credit balance. A
+> [REST API](https://www.insightsocial.app/social-media-api) and
+> [hosted MCP server](https://www.insightsocial.app/mcp) return profiles, posts, comments,
+> followers and search from 25 platforms (Instagram, TikTok, LinkedIn, Facebook, X, YouTube,
+> Reddit, Threads, Pinterest, Bluesky, Telegram, Twitch and more) for scripts and AI agents.
+> A free Chrome extension exports the same kinds of data from 9 of them to Excel, no code
+> required.
 
-[**Install from Chrome Web Store →**](https://chromewebstore.google.com/detail/free-social-scraper-expor/cddgiejchlkeedmhjeodlcjdiddlcdld)
+[**Install from Chrome Web Store →**](https://chromewebstore.google.com/detail/insightsocial-free-social/cddgiejchlkeedmhjeodlcjdiddlcdld)
 &nbsp;·&nbsp; [Website](https://www.insightsocial.app)
 &nbsp;·&nbsp; [Use cases](https://www.insightsocial.app/use-cases)
 &nbsp;·&nbsp; [API docs](https://www.insightsocial.app/docs)
 &nbsp;·&nbsp; [What's new](https://www.insightsocial.app/whats-new)
 
-<sub>**Last verified: 2026-08-31 · extension v4.0.3.** Full capability matrix, plan
+<sub>**Last verified: extension 2026-08-31 (v4.0.3) · API 2026-10-14.** Full capability matrix, plan
 limits and known-stale claims: **[FACTS.md](FACTS.md)**.</sub>
 
 ![Instagram hashtag results in the InsightSocial web portal — 500 creators with contact info, follower counts, engagement rate, and bio fields](screenshots/instagram-result-page.png)
@@ -94,8 +98,8 @@ draw on the same balance, priced per endpoint.
 | Data history | 30 days | 3 years |
 | Ask AI · DM openers · contact enrichment | — | Yes |
 
-Need rows once rather than monthly? A one-time pack of **2,000 credits is $9**, and
-it never expires. No credit card for the free plan.
+Need rows once rather than monthly? One-time credit packs run from **250 for $2** to
+**25,000 for $39**, and they never expire. No credit card for the free plan.
 
 [Full pricing →](https://www.insightsocial.app/pricing)
 
@@ -120,11 +124,13 @@ Rows are buffered in your browser (IndexedDB) and synced to your own account as 
 Private accounts you don't follow, anything behind a login you don't have, Instagram Stories and DMs, LinkedIn search, TikTok's For You feed, YouTube channels (comments only), Pinterest boards and pins. The full list is in [FACTS.md](FACTS.md).
 
 **Is there an API?**
-Yes, since 2026-09-22. `https://api.insightsocial.app/v1` returns public data from the
-same 9 platforms as JSON, authenticated with an `x-api-key` header and paid from the same
+Yes, since 2026-09-22. `https://api.insightsocial.app/v1` returns public data from 25
+platforms as JSON (300+ endpoints), authenticated with an `x-api-key` header and paid from the same
 credit balance. Failed calls and empty results are free. Start with the
 [Quickstart](https://www.insightsocial.app/docs/quickstart), or set up a coding agent
 with `npx -y insightsocial init` ([CLI + MCP server](https://github.com/insightsocial/cli)).
+Claude, ChatGPT and other AI apps can connect to the hosted MCP server at
+`https://api.insightsocial.app/mcp` with one URL and a sign-in ([setup](https://www.insightsocial.app/mcp)).
 API facts are in [FACTS.md](FACTS.md#api).
 
 **Which browsers?**
