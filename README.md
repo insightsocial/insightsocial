@@ -14,7 +14,7 @@
 &nbsp;·&nbsp; [API docs](https://www.insightsocial.app/docs)
 &nbsp;·&nbsp; [What's new](https://www.insightsocial.app/whats-new)
 
-<sub>**Last verified: extension 2026-08-31 (v4.0.3) · API 2026-10-14.** Full capability matrix, plan
+<sub>**Last verified: extension 2026-10-17 (v4.6.1 on the Chrome Web Store; v4.7.0 additions marked "from v4.7.0") · API 2026-10-14.** Full capability matrix, plan
 limits and known-stale claims: **[FACTS.md](FACTS.md)**.</sub>
 
 ![Instagram hashtag results in the InsightSocial web portal — 500 creators with contact info, follower counts, engagement rate, and bio fields](screenshots/instagram-result-page.png)
@@ -29,19 +29,46 @@ InsightSocial scrapes the social platforms you're already logged into — direct
 
 ### Supported platforms & sources
 
-9 platforms, 48 sources. A "source" is a page type the extension recognizes.
+9 social platforms. A "source" is a page type the extension recognizes.
 
 | Platform | Sources |
 |---|---|
 | **Instagram** | Hashtag · Profile · Single Post · Home Feed · Explore · Audio · Reels feed · Profile Reels · Followers list · Following list |
 | **Facebook** | Home Feed · Search Results · Single Post · Group · Group Search · Profile · Page · Followers · Following · Reels |
-| **X (Twitter)** | Home Feed · Explore · Single Post · Profile · Followers list · Following list · Search · Hashtag · List · Community |
+| **X (Twitter)** | Home Feed · Explore · Single Post · Profile · Followers list · Following list · Your Likes · Search · Hashtag · List · Community |
 | **LinkedIn** | Home Feed · Profile · Company · Single Post |
 | **Threads** | Home Feed · Profile · Single Post · Search |
 | **TikTok** | Single Video · Profile · Hashtag · Search |
-| **Reddit** | Single Post · Search Results · Subreddit |
-| **YouTube** | Video · Shorts |
+| **Reddit** | Single Post · Search Results · Subreddit · User Profile comments (from v4.7.0) |
+| **YouTube** | Video · Shorts · Channel (Videos or Shorts tab) · Search Results · Home Feed |
 | **Pinterest** | Search Results |
+
+Runs keep going when you switch to another tab or app (since v4.5.0). A few pages
+still need their tab in front, such as X search and hashtags, and the side panel says
+so before you start.
+
+### Review and discussion sites (from v4.7.0)
+
+Extension v4.7.0 adds ten review and discussion sites. Version 4.6.1, the build on the
+Chrome Web Store until 4.7.0 clears review, cannot read them; installed extensions
+update themselves once it is published.
+
+| Site | What a run collects |
+|---|---|
+| **Trustpilot** | A company's reviews, with stars, dates, verified flags and the company's replies |
+| **Google Maps** | A place's reviews and the owner's replies (sign in to Google first; keep the tab in front) |
+| **Amazon** | A product's reviews on Amazon's storefronts (sign in to Amazon to see more than the few shown signed out) |
+| **Etsy** | Reviews of a listing or a whole shop, with the seller's replies |
+| **Steam** | A game's reviews, newest first, recommended or not |
+| **Product Hunt** | A product's reviews and a launch's comments |
+| **Hacker News** | A whole comment thread, however deep |
+| **Quora** | The answers to a question, with their comments |
+| **Blind** | The comments on a post |
+| **Notion** | Public Notion pages and databases |
+
+One page per run. Each site asks Chrome for access the first time you use it; nothing
+extra is requested at install. Rows export from the same portal, in the same four
+formats. Overview: [insightsocial.app/scraper/reviews](https://www.insightsocial.app/scraper/reviews).
 
 What each one actually captures — and what it deliberately doesn't — is in
 [FACTS.md](FACTS.md).
@@ -87,16 +114,16 @@ Scraping and browsing your results are unlimited on every plan. In the extension
 only thing metered is **rows you export** — 1 credit per row, reset monthly. API calls
 draw on the same balance, priced per endpoint.
 
-| | Free | Pro |
-|---|---|---|
-| **Price** | $0 forever | **$9.99/mo**, or **$7.99/mo** billed yearly ($95.88/yr) |
-| Credits / month (exports + API) | 500 | 10,000 |
-| Scraping + dashboard | Unlimited | Unlimited |
-| Platforms | All 9 | All 9 |
-| Formats | Sheets · CSV · Excel · JSON | Sheets · CSV · Excel · JSON |
-| Scheduled scrapes | Yes | Yes |
-| Data history | 30 days | 3 years |
-| Ask AI · DM openers · contact enrichment | — | Yes |
+| | Free | Pro | Studio |
+|---|---|---|---|
+| **Price** | $0 forever | **$9.99/mo**, or **$7.99/mo** billed yearly ($95.88/yr) | **$49/mo** |
+| Credits / month (exports + API) | 500 | 10,000 | 150,000 for exports; API calls use the first 10,000, as on Pro |
+| Scraping + dashboard | Unlimited | Unlimited | Unlimited |
+| Platforms | All 9 | All 9 | All 9 |
+| Formats | Sheets · CSV · Excel · JSON | Sheets · CSV · Excel · JSON | Sheets · CSV · Excel · JSON |
+| Scheduled scrapes | Yes | Yes | Yes |
+| Data history | 30 days | 3 years | Same as Pro |
+| Ask AI · DM openers · contact enrichment | — | Yes | Yes |
 
 Need rows once rather than monthly? One-time credit packs run from **250 for $2** to
 **25,000 for $39**, and they never expire. No credit card for the free plan.
@@ -115,13 +142,13 @@ Open the [web portal](https://www.insightsocial.app/portal/history), pick a sess
 Only exported rows. You can scrape as much as you want and read all of it in the dashboard for free — the meter moves when you take rows out.
 
 **Do scheduled scrapes work when my browser is closed?**
-No — schedules run via Chrome alarms, which need Chrome running with a visible window. We're upfront about this; nobody else's "scheduled scraper" works closed either, they just don't tell you.
+No. Schedules fire from Chrome itself (Chrome alarms), so Chrome has to be running; a turn missed by more than an hour while the browser was closed is skipped rather than run late. A run that starts in a background window keeps going on every social platform (since v4.5.0).
 
 **Where is my data stored?**
 Rows are buffered in your browser (IndexedDB) and synced to your own account as a run progresses, so they're waiting for you in the web portal. Synced data is readable only by your account, and is kept 30 days on Free, 3 years on Pro.
 
 **What can't it do?**
-Private accounts you don't follow, anything behind a login you don't have, Instagram Stories and DMs, LinkedIn search, TikTok's For You feed, YouTube channels (comments only), Pinterest boards and pins. The full list is in [FACTS.md](FACTS.md).
+Private accounts you don't follow, anything behind a login you don't have, Instagram Stories and DMs, LinkedIn search, TikTok's For You feed, Pinterest profiles, boards and single pins (Pinterest works from search results), and bulk lists of URLs in one run. YouTube channels, searches and the home feed have been supported since v4.6.0. The full list is in [FACTS.md](FACTS.md).
 
 **Is there an API?**
 Yes, since 2026-09-22. `https://api.insightsocial.app/v1` returns public data from 25
@@ -157,4 +184,4 @@ InsightSocial is built by independent makers shipping in public. Follow along:
 
 ---
 
-*InsightSocial is not affiliated with Meta, ByteDance, X Corp, Microsoft, Google, Reddit or Pinterest. All platform names are trademarks of their respective owners.*
+*InsightSocial is not affiliated with Meta, ByteDance, X Corp, Microsoft, Google, Reddit or Pinterest, or with any review or discussion site it reads. All platform and site names are trademarks of their respective owners.*
