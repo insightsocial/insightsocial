@@ -68,7 +68,7 @@ What each one actually captures — and what it deliberately doesn't — is in
 
 ### API platforms
 
-The [API](https://www.insightsocial.app/docs) reads 61 platforms, 940 endpoints in all,
+The [API](https://www.insightsocial.app/docs) reads 61 platforms, 937 endpoints in all,
 with one key and one credit balance. Each platform's endpoints and prices:
 [insightsocial.app/docs](https://www.insightsocial.app/docs/endpoint-pricing).
 
@@ -142,7 +142,7 @@ Private accounts you don't follow, anything behind a login you don't have, Linke
 
 **Is there an API?**
 Yes, since 2026-09-22. `https://api.insightsocial.app/v1` returns public data from 61
-platforms as JSON (940 endpoints, most of them beta), authenticated with an `x-api-key` header and paid from the same
+platforms as JSON (937 endpoints, most of them beta), authenticated with an `x-api-key` header and paid from the same
 credit balance. Failed calls and empty results are free. Start with the
 [Quickstart](https://www.insightsocial.app/docs/quickstart), or set up a coding agent
 with `npx -y insightsocial init` ([CLI + MCP server](https://github.com/insightsocial/cli)).

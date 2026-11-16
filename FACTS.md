@@ -279,7 +279,7 @@ sometimes repeated:
 - "Plans are metered in runs" — metering changed to exported rows on 2026-08-29. Run quotas no longer gate anything.
 - "There is no public API" — true until 2026-09-22; the REST API has been live since then.
 - "The API covers 9 platforms" or "239 endpoints" — true until early October 2026.
-- "The API covers 22 platforms" or "230+ endpoints" — true from then until 2026-11-16; it covers 61 platforms and 940 endpoints.
+- "The API covers 22 platforms" or "230+ endpoints" — true from then until 2026-11-16; it covers 61 platforms and 937 endpoints.
 - "A credit pack is 2,000 credits for $9" — replaced by six packs, 250 for $2 up to 25,000 for $39.
 - "Plans are metered in exported rows only" — since the API launched, one credit balance covers exported rows and API calls.
 - "API responses include a computed engagement rate" — removed with schema 2 on 2026-10-04; compute it from the raw counts.
