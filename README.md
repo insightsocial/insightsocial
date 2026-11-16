@@ -3,8 +3,8 @@
 > Public social media data two ways, on one credit balance. A
 > [REST API](https://www.insightsocial.app/social-media-api) and
 > [hosted MCP server](https://www.insightsocial.app/mcp) return profiles, posts, comments,
-> followers and search from 22 platforms (TikTok, LinkedIn, X, YouTube, Reddit, Pinterest,
-> Bluesky, Telegram, Twitch and more) for scripts and AI agents.
+> followers and search from 61 platforms (TikTok, LinkedIn, X, YouTube, Reddit, Pinterest,
+> Bluesky, Telegram, Twitch, GitHub, Wikipedia, Steam and more) for scripts and AI agents.
 > A free Chrome extension exports the same kinds of data from 6 of them to Excel, no code
 > required.
 
@@ -14,7 +14,7 @@
 &nbsp;·&nbsp; [API docs](https://www.insightsocial.app/docs)
 &nbsp;·&nbsp; [What's new](https://www.insightsocial.app/whats-new)
 
-<sub>**Last verified: extension 2026-10-17 (v4.6.1 on the Chrome Web Store; v4.7.0 additions marked "from v4.7.0") · API 2026-10-14.** Full capability matrix, plan
+<sub>**Last verified: extension 2026-10-17 (v4.6.1 on the Chrome Web Store; v4.7.0 additions marked "from v4.7.0") · API 2026-11-16.** Full capability matrix, plan
 limits and known-stale claims: **[FACTS.md](FACTS.md)**.</sub>
 
 ---
@@ -65,6 +65,22 @@ formats. Overview: [insightsocial.app/scraper/reviews](https://www.insightsocial
 
 What each one actually captures — and what it deliberately doesn't — is in
 [FACTS.md](FACTS.md).
+
+### API platforms
+
+The [API](https://www.insightsocial.app/docs) reads 61 platforms, 940 endpoints in all,
+with one key and one credit balance. Each platform's endpoints and prices:
+[insightsocial.app/docs](https://www.insightsocial.app/docs/endpoint-pricing).
+
+| Group | Platforms |
+|---|---|
+| **Social and video** | TikTok · LinkedIn · X (Twitter) · YouTube · Reddit · Pinterest · Bluesky · Truth Social · Snapchat · Telegram · Twitch · Kick · Rumble · Kwai · Douyin · Xiaohongshu (RedNote) · Quora · TikTok Shop · Weibo · Zhihu · Substack · Nextdoor |
+| **More platforms (beta)** | Amazon creator storefronts · App Store · Apple Music · Behance · Dailymotion · Deezer · DEV Community · Discord · Dribbble · Fandom · Flickr · GitHub · Google Ads Transparency · Google News · Google Trends · Gumroad · Hacker News · Hugging Face · Ko-fi · Lemmy · Letterboxd · Linktree · Lnk.Bio · Mastodon · Medium · MyAnimeList · npm · Polymarket · Product Hunt · Shopify stores · SoundCloud · Spotify · Stack Overflow · Stan Store · Steam · Vimeo · Wikipedia · Yahoo Finance · Yelp |
+
+Posts, profiles, comments and transcripts come back in one shared shape on every
+platform. Endpoints marked beta, which include everything in the second row, return the
+source's own structure with snake_case keys, string ids and ISO times, and their fields
+may change ([what beta means](https://www.insightsocial.app/docs/schema/conventions)).
 
 ## How it works
 
@@ -125,8 +141,8 @@ Rows are buffered in your browser (IndexedDB) and synced to your own account as 
 Private accounts you don't follow, anything behind a login you don't have, LinkedIn search, TikTok's For You feed, Pinterest profiles, boards and single pins (Pinterest works from search results), and bulk lists of URLs in one run. YouTube channels, searches and the home feed have been supported since v4.6.0. The full list is in [FACTS.md](FACTS.md).
 
 **Is there an API?**
-Yes, since 2026-09-22. `https://api.insightsocial.app/v1` returns public data from 22
-platforms as JSON (230+ endpoints), authenticated with an `x-api-key` header and paid from the same
+Yes, since 2026-09-22. `https://api.insightsocial.app/v1` returns public data from 61
+platforms as JSON (940 endpoints, most of them beta), authenticated with an `x-api-key` header and paid from the same
 credit balance. Failed calls and empty results are free. Start with the
 [Quickstart](https://www.insightsocial.app/docs/quickstart), or set up a coding agent
 with `npx -y insightsocial init` ([CLI + MCP server](https://github.com/insightsocial/cli)).
@@ -158,4 +174,4 @@ InsightSocial is built by independent makers shipping in public. Follow along:
 
 ---
 
-*InsightSocial is not affiliated with ByteDance, X Corp, Microsoft, Google, Reddit or Pinterest, or with any review or discussion site it reads. All platform and site names are trademarks of their respective owners.*
+*InsightSocial is not affiliated with ByteDance, X Corp, Microsoft, Google, Reddit or Pinterest, or with any other platform, review or discussion site it reads. All platform and site names are trademarks of their respective owners.*
